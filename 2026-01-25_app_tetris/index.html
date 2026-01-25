@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テトリス</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <div class="sidebar">
+            <h1>TETRIS</h1>
+            <div class="next-piece">
+                <p>NEXT</p>
+                <canvas id="nextCanvas" width="100" height="100"></canvas>
+            </div>
+            <div class="stats">
+                <p>SCORE</p>
+                <div class="score" id="score">0</div>
+                <p>LINES</p>
+                <div class="lines" id="lines">0</div>
+                <p>LEVEL</p>
+                <div class="level" id="level">1</div>
+            </div>
+            <div class="controls">
+                <p>← → : 移動</p>
+                <p>↑ : 回転</p>
+                <p>↓ : 落下</p>
+                <p>SPACE : 即落下</p>
+                <p>P : ポーズ</p>
+            </div>
+        </div>
+        <div class="game-board">
+            <canvas id="gameCanvas" width="300" height="600"></canvas>
+            <div class="overlay" id="overlay">
+                <div class="message" id="message">PRESS ENTER TO START</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

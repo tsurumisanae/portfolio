@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSURUMI SANAE | Film Creator</title>
+    <meta name="description" content="映像クリエイター TSURUMI SANAE のポートフォリオ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">TSURUMI<span>.</span></div>
+        <div class="nav-links">
+            <a href="#works">Works</a>
+            <a href="#about">About</a>
+            <a href="https://www.instagram.com/s.tsurumi.s/" target="_blank" class="nav-social">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
+                <source src="" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-label">FILM CREATOR</div>
+            <h1 class="hero-title">
+                <span class="title-line">TSURUMI</span>
+                <span class="title-line">SANAE</span>
+            </h1>
+            <p class="hero-tagline" id="heroTagline"></p>
+            <div class="hero-cta">
+                <a href="#works" class="btn-primary">
+                    <span>View Works</span>
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- Works Section -->
+    <section class="works" id="works">
+        <div class="section-header">
+            <span class="section-number">01</span>
+            <h2 class="section-title">Selected Works</h2>
+            <p class="section-subtitle">映像制作 / 撮影 / 編集 / モーション / アニメーション</p>
+        </div>
+
+        <div class="works-grid" id="worksGrid">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image-wrapper">
+                <div class="about-image-frame">
+                    <img src="" alt="TSURUMI SANAE" class="about-image" id="aboutImage">
+                </div>
+                <div class="about-image-decoration"></div>
+            </div>
+
+            <div class="about-content">
+                <span class="section-number">02</span>
+                <h2 class="about-title">About</h2>
+                <div class="about-bio" id="aboutBio">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="projectCount">10+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2020</span>
+                        <span class="stat-label">Since</span>
+                    </div>
+                </div>
+                <a href="https://www.instagram.com/s.tsurumi.s/" target="_blank" class="btn-secondary">
+                    <i class="fab fa-instagram"></i>
+                    <span>Follow on Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">TSURUMI<span>.</span></div>
+            <p class="footer-text">映像で、物語を紡ぐ。</p>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/s.tsurumi.s/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="footer-copyright">&copy; 2026 TSURUMI SANAE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="modal" id="videoModal">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-video" id="modalVideo"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

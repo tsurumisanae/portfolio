@@ -1,0 +1,81 @@
+{
+    "profile": {
+        "name": "TSURUMI_SANAE",
+        "tagline": "9人兄弟出身の映像脚本家",
+        "bio": [
+            "大阪府在住",
+            "1996年生まれ",
+            "映像制作/撮影/編集/モーション/アニメーション"
+        ],
+        "image": "https://prd.storage.lit.link/images/creators/b159c4ec-56cc-4a15-aaec-6b25bc0b76fa/cb3a121c-1ebd-4f71-8c70-688a3ea3b2ae.jpeg",
+        "background": "https://prd.resource-api.lit.link/v1/images/resized?image_url=images/unsplash/Taiwan Modern/medium/emile-seguin-R9OueKOtGGU-unsplash-min.jpg&width=2000"
+    },
+    "links": [
+        {
+            "type": "instagram",
+            "title": "Instagram",
+            "text": "TSURUMI_SANAE",
+            "url": "https://www.instagram.com/s.tsurumi.s/"
+        },
+        {
+            "type": "youtube",
+            "title": "和歌山クラフトビール nom craft様",
+            "youtubeId": "enesJk6RKaY",
+            "url": "https://youtu.be/enesJk6RKaY"
+        },
+        {
+            "type": "youtube",
+            "title": "和歌山クラフトビール ORYZAE BREWING様（企画、撮影）",
+            "youtubeId": "z72PLlzQGPs",
+            "url": "https://youtu.be/z72PLlzQGPs"
+        },
+        {
+            "type": "youtube",
+            "title": "越前市役所様 You-Tube情報発信番組（ディレクション、撮影、編集）",
+            "youtubeId": "Pf3pNdLtwwA",
+            "url": "https://youtu.be/Pf3pNdLtwwA"
+        },
+        {
+            "type": "youtube",
+            "title": "arinkaya様_店舗映像（撮影・編集）",
+            "youtubeId": "D4MRLGmvcAg",
+            "url": "https://youtu.be/D4MRLGmvcAg"
+        },
+        {
+            "type": "youtube",
+            "title": "未来創造ラボ様_モーション映像（編集）",
+            "youtubeId": "5XSb8o5ysZk",
+            "url": "https://youtu.be/5XSb8o5ysZk?si=drH18siZUyo0yM9o"
+        },
+        {
+            "type": "youtube",
+            "title": "お笑い芸人様＿お笑いライブOP（アニメーション）",
+            "youtubeId": "wypgiMjcFt8",
+            "url": "https://youtu.be/wypgiMjcFt8?si=Vhn5OpBg8rtBmMgc"
+        },
+        {
+            "type": "youtube",
+            "title": "DMC様_dance digest（撮影・編集）",
+            "youtubeId": "Nf1hny_cV5I",
+            "url": "https://youtu.be/Nf1hny_cV5I"
+        },
+        {
+            "type": "youtube",
+            "title": "樟蔭高等学校様_体育祭OP（撮影・編集）",
+            "youtubeId": "syxpBXVNMA0",
+            "url": "https://youtu.be/syxpBXVNMA0"
+        },
+        {
+            "type": "youtube",
+            "title": "北野ホテル様 撮って出し映像（撮影、編集）",
+            "youtubeId": "2rieM4h9OYY",
+            "url": "https://youtu.be/2rieM4h9OYY"
+        },
+        {
+            "type": "youtube",
+            "title": "結婚式＿OP（撮影・編集）",
+            "youtubeId": "7jSby24eum0",
+            "url": "https://youtu.be/7jSby24eum0"
+        }
+    ]
+}

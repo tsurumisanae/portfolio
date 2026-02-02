@@ -54,15 +54,15 @@ function calculateResult() {
     if (score === 2) {
         resultText = '鬱 100％';
         resultMessage = 'かなりお疲れのようです。<br>無理をせず、専門機関への相談も検討してください。';
-        color = '#ec4899'; // Pink/Red for warning
+        color = '#a16207'; // Rust/Bronze for warning (was pink)
     } else if (score === 1) {
         resultText = '鬱 50％';
         resultMessage = '少し疲れが溜まっているかもしれません。<br>ゆっくり休む時間を作りましょう。';
-        color = '#8b5cf6'; // Purple for neutral/caution
+        color = '#854d0e'; // Dark Gold/Olive for caution (was purple)
     } else {
         resultText = '健康';
         resultMessage = '心身ともに良好な状態です！<br>この調子で過ごしましょう。';
-        color = '#38bdf8'; // Blue for healthy
+        color = '#4d7c0f'; // Fresh Green for healthy (was blue)
     }
 
     resultTextElement.textContent = resultText;

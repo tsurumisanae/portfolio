@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メンタルヘルスチェック</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <div class="glass-card" id="app-container">
+            <!-- Start Screen -->
+            <div id="start-screen" class="screen active">
+                <h1>簡易メンタルチェック</h1>
+                <p>2つの質問で今の心の状態をチェックします。</p>
+                <button class="btn-primary" onclick="startTest()">診断を始める</button>
+                <p class="disclaimer">※この診断は医学的な診断ではありません。結果はあくまで目安です。</p>
+            </div>
+
+            <!-- Question 1 -->
+            <div id="question-1" class="screen">
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%"></div>
+                </div>
+                <h2>Q1. 朝は起きれますか？</h2>
+                <div class="options-container">
+                    <button class="option-card" onclick="answerQ1('A')">
+                        <span class="option-label">A</span>
+                        <span class="option-text">すぐ起きれる</span>
+                    </button>
+                    <button class="option-card" onclick="answerQ1('B')">
+                        <span class="option-label">B</span>
+                        <span class="option-text">中々起きれない</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div id="question-2" class="screen">
+                <div class="progress-bar">
+                    <div class="progress" style="width: 100%"></div>
+                </div>
+                <h2>Q2. ご飯はちゃんと食べれてますか？</h2>
+                <div class="options-container">
+                    <button class="option-card" onclick="answerQ2('A')">
+                        <span class="option-label">A</span>
+                        <span class="option-text">食べれてる</span>
+                    </button>
+                    <button class="option-card" onclick="answerQ2('B')">
+                        <span class="option-label">B</span>
+                        <span class="option-text">食べれてない</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Screen -->
+            <div id="result-screen" class="screen">
+                <h2>診断結果</h2>
+                <div class="result-display">
+                    <span class="result-score" id="result-text">--</span>
+                </div>
+                <div class="result-message" id="result-message">
+                    <!-- Dynamic message -->
+                </div>
+                <button class="btn-secondary" onclick="resetTest()">もう一度診断する</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

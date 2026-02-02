@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="timer-display">
+            <svg class="progress-ring" width="200" height="200">
+                <circle class="progress-ring__circle-bg" stroke="rgba(255,255,255,0.1)" stroke-width="8"
+                    fill="transparent" r="90" cx="100" cy="100" />
+                <circle class="progress-ring__circle" stroke="#ff4d4d" stroke-width="8" fill="transparent" r="90"
+                    cx="100" cy="100" />
+            </svg>
+            <div class="time" id="time">25:00</div>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn" class="btn btn-primary"><i class="fas fa-play"></i></button>
+            <button id="resetBtn" class="btn btn-secondary"><i class="fas fa-redo"></i></button>
+        </div>
+
+        <div class="modes">
+            <button class="mode-btn active" data-time="25">Focus</button>
+            <button class="mode-btn" data-time="5">Short Break</button>
+            <button class="mode-btn" data-time="15">Long Break</button>
+        </div>
+
+        <div class="sound-control">
+            <button id="rainBtn" class="sound-btn" title="Rain"><i class="fas fa-cloud-rain"></i></button>
+            <button id="cafeBtn" class="sound-btn" title="Cafe"><i class="fas fa-mug-hot"></i></button>
+            <button id="fireBtn" class="sound-btn" title="Fire"><i class="fas fa-fire"></i></button>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5">
+        </div>
+    </div>
+
+    <audio id="soundRain" loop src="https://assets.mixkit.co/sfx/preview/mixkit-light-rain-loop-1253.mp3"></audio>
+    <audio id="soundCafe" loop
+        src="https://assets.mixkit.co/sfx/preview/mixkit-restaurant-crowd-talking-ambience-448.mp3"></audio>
+    <audio id="soundFire" loop
+        src="https://assets.mixkit.co/sfx/preview/mixkit-campfire-crackling-loop-1279.mp3"></audio>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

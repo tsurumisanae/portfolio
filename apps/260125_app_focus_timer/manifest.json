@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Cinematic Focus Timer",
+    "version": "1.0",
+    "description": "A stylish pomodoro timer for video creators with ambient music.",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "alarms",
+        "notifications",
+        "storage"
+    ]
+}

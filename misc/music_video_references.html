@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MV参考映像 - 検索キーワード集</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Yu Gothic', 'Hiragino Sans', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .concept-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .concept-box h2 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .concept-box p {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section h3 {
+            color: #555;
+            font-size: 1.3rem;
+            margin: 24px 0 16px 0;
+            padding-left: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .keyword-item {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .keyword-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .keyword-text {
+            font-family: 'Consolas', 'Courier New', monospace;
+            color: #2d3748;
+            font-size: 1rem;
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .copy-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .copy-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+        }
+
+        .copy-btn:active {
+            transform: scale(0.98);
+        }
+
+        .copy-btn.copied {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+
+        .description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-weight: 600;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .keyword-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .copy-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎬 MV参考映像 検索キーワード集</h1>
+        <p class="subtitle">楽曲コンセプト：深い愛情・家族愛・尊さと温かみ・慈しみ</p>
+
+        <div class="concept-box">
+            <h2>📝 撮影カット概要</h2>
+            <p><strong>人がいないカット：</strong>車窓風景、風景、空撮、POV、ヴィオラ単体、ピアノ単体</p>
+            <p><strong>人がいるカット：</strong>孔也さん（顔なし）、小室さん（顔OK）、二人一緒</p>
+        </div>
+
+        <!-- 人がいないカット -->
+        <div class="section">
+            <h2>📍 人がいないカット</h2>
+
+            <h3>1. 車窓風景・POV</h3>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">Yorushika Train window MV</div>
+                    <div class="description">ヨルシカの車窓MV</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'Yorushika Train window MV')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">The Chemical Brothers Star Guitar</div>
+                    <div class="description">伝説的な車窓POV MV</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'The Chemical Brothers Star Guitar')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">POV train window frames the world like a painting</div>
+                    <div class="description">シネマティックな車窓映像</div>
+                </div>
+                <button class="copy-btn"
+                    onclick="copyText(this, 'POV train window frames the world like a painting')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">cinematic night train through snow</div>
+                    <div class="description">夜の車窓、雪景色</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'cinematic night train through snow')">コピー</button>
+            </div>
+
+            <h3>2. 風景・空撮</h3>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">Switzerland 4K nature cinematic</div>
+                    <div class="description">スイスの自然風景</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'Switzerland 4K nature cinematic')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">Norway 4K scenic relaxation film</div>
+                    <div class="description">ノルウェーのフィヨルド</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'Norway 4K scenic relaxation film')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">aerial drone nature cinematic music</div>
+                    <div class="description">ドローン空撮映像</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'aerial drone nature cinematic music')">コピー</button>
+            </div>
+
+            <h3>3. ヴィオラ単体・ピアノ単体</h3>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">viola close up strings bow cinematic</div>
+                    <div class="description">ヴィオラの弦と弓のクローズアップ</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'viola close up strings bow cinematic')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">piano keys hands close up cinematic</div>
+                    <div class="description">ピアノ鍵盤と手元のクローズアップ</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'piano keys hands close up cinematic')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">inspiring classical viola solo background music</div>
+                    <div class="description">ヴィオラ単体の美しい映像</div>
+                </div>
+                <button class="copy-btn"
+                    onclick="copyText(this, 'inspiring classical viola solo background music')">コピー</button>
+            </div>
+        </div>
+
+        <!-- 人がいるカット -->
+        <div class="section">
+            <h2>👤 人がいるカット</h2>
+
+            <h3>4. 孔也さん（顔があまり映らない）</h3>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">recording studio behind the scenes classical music</div>
+                    <div class="description">レコーディング風景（ドキュメンタリー風）</div>
+                </div>
+                <button class="copy-btn"
+                    onclick="copyText(this, 'recording studio behind the scenes classical music')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">The Voice of Piano Carmen Stefanescu making of</div>
+                    <div class="description">ピアノレコーディングのメイキング</div>
+                </div>
+                <button class="copy-btn"
+                    onclick="copyText(this, 'The Voice of Piano Carmen Stefanescu making of')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">composer working piano silhouette</div>
+                    <div class="description">作曲風景（シルエット・後ろ姿）</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'composer working piano silhouette')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">musician hands piano composing</div>
+                    <div class="description">作曲中の手元中心</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'musician hands piano composing')">コピー</button>
+            </div>
+
+            <h3>5. 小室さん（顔OK）</h3>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">musician train window earphones contemplation</div>
+                    <div class="description">電車でイヤホン、外を眺める</div>
+                </div>
+                <button class="copy-btn"
+                    onclick="copyText(this, 'musician train window earphones contemplation')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">shinkansen evening train window ambient noise headphones</div>
+                    <div class="description">新幹線の車窓、イヤホン</div>
+                </div>
+                <button class="copy-btn"
+                    onclick="copyText(this, 'shinkansen evening train window ambient noise headphones')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">musician nature inspiration cinematic</div>
+                    <div class="description">大自然でインスピレーションを得る様子</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'musician nature inspiration cinematic')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">viola case carrying musician daily life</div>
+                    <div class="description">ヴィオラケースを持ち運ぶ日常</div>
+                </div>
+                <button class="copy-btn"
+                    onclick="copyText(this, 'viola case carrying musician daily life')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">musician reading sheet music close up</div>
+                    <div class="description">楽譜をなぞる手元</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'musician reading sheet music close up')">コピー</button>
+            </div>
+
+            <h3>6. 二人一緒</h3>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">piano viola duet concert hall performance</div>
+                    <div class="description">ホールでのピアノ・ヴィオラ演奏</div>
+                </div>
+                <button class="copy-btn"
+                    onclick="copyText(this, 'piano viola duet concert hall performance')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">CINEMA PARADISO piano strings live</div>
+                    <div class="description">ピアノと弦楽器のライブ演奏</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'CINEMA PARADISO piano strings live')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">classical duo performance cinematic lighting</div>
+                    <div class="description">デュオ演奏、シネマティックな照明</div>
+                </div>
+                <button class="copy-btn"
+                    onclick="copyText(this, 'classical duo performance cinematic lighting')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">piano hands to viola face transition</div>
+                    <div class="description">ピアノの手元からヴィオラの顔へのカメラワーク</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'piano hands to viola face transition')">コピー</button>
+            </div>
+        </div>
+
+        <!-- 家族愛テーマ -->
+        <div class="section">
+            <h2>❤️ 家族愛・温かみテーマ</h2>
+
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">Unlimited tone With your Hands MV</div>
+                    <div class="description">家族のつながりを歌った感動ソング</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'Unlimited tone With your Hands MV')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">絢香 おかえり MV</div>
+                    <div class="description">家族への感謝ソング</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, '絢香 おかえり MV')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">GReeeeN 愛唄 MV</div>
+                    <div class="description">様々な愛の形を描いた名曲</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'GReeeeN 愛唄 MV')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">Legoland Japan きみのいまをぜんぶ CM</div>
+                    <div class="description">親子の大切な瞬間を描いたブランドムービー</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'Legoland Japan きみのいまをぜんぶ CM')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">Toyota Father and Daughter commercial Japan</div>
+                    <div class="description">日本のCMで有名な親子の感動ストーリー</div>
+                </div>
+                <button class="copy-btn"
+                    onclick="copyText(this, 'Toyota Father and Daughter commercial Japan')">コピー</button>
+            </div>
+        </div>
+
+        <!-- ドキュメンタリー風 -->
+        <div class="section">
+            <h2>🎥 ドキュメンタリー風・制作過程</h2>
+
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">Recording Classical Music on Location WCA 404</div>
+                    <div class="description">クラシック音楽のレコーディング技術</div>
+                </div>
+                <button class="copy-btn"
+                    onclick="copyText(this, 'Recording Classical Music on Location WCA 404')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">Behind the Scenes MakeMusic Publications Amy Kniffen</div>
+                    <div class="description">ヴィオラ奏者のレコーディング裏側</div>
+                </div>
+                <button class="copy-btn"
+                    onclick="copyText(this, 'Behind the Scenes MakeMusic Publications Amy Kniffen')">コピー</button>
+            </div>
+            <div class="keyword-item">
+                <div>
+                    <div class="keyword-text">The Art of Listening Music Documentary</div>
+                    <div class="description">音楽制作ドキュメンタリー</div>
+                </div>
+                <button class="copy-btn" onclick="copyText(this, 'The Art of Listening Music Documentary')">コピー</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">✓ コピーしました！</div>
+
+    <script>
+        function copyText(button, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // ボタンのフィードバック
+                const originalText = button.textContent;
+                button.textContent = '✓ コピー完了';
+                button.classList.add('copied');
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+
+                // トースト通知
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 2000);
+            }).catch(err => {
+                console.error('コピーに失敗しました:', err);
+                alert('コピーに失敗しました。手動でコピーしてください。');
+            });
+        }
+    </script>
+</body>
+
+</html>

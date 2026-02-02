@@ -131,36 +131,54 @@ function renderHero() {
 
 // Render Works Grid
 function renderWorks() {
-  const videos = data.links.filter(link => link.type === 'youtube');
-  projectCount.textContent = videos.length + '+';
+  // Filter for youtube and app types
+  const works = data.links.filter(link => ['youtube', 'app'].includes(link.type));
+  projectCount.textContent = works.length + '+';
 
-  worksGrid.innerHTML = videos.map(video => {
-    const thumbnail = `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`;
-    const fallbackThumbnail = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
-
-    return `
-      <article class="work-card" data-youtube-id="${video.youtubeId}">
-        <div class="work-thumbnail">
-          <img 
-            src="${thumbnail}" 
-            alt="${video.title}"
-            loading="lazy"
-            onerror="this.src='${fallbackThumbnail}'"
-          >
-          <div class="work-play">
-            <i class="fas fa-play"></i>
-          </div>
-        </div>
-        <div class="work-info">
-          <span class="work-category">${video.category || 'Video'}</span>
-          <h3 class="work-title">${video.title}</h3>
-        </div>
-      </article>
-    `;
+  worksGrid.innerHTML = works.map(work => {
+    if (work.type === 'youtube') {
+      const thumbnail = `https://img.youtube.com/vi/${work.youtubeId}/maxresdefault.jpg`;
+      const fallbackThumbnail = `https://img.youtube.com/vi/${work.youtubeId}/hqdefault.jpg`;
+      return `
+        <article class="work-card video-card" data-youtube-id="${work.youtubeId}">
+            <div class="work-thumbnail">
+            <img 
+                src="${thumbnail}" 
+                alt="${work.title}"
+                loading="lazy"
+                onerror="this.src='${fallbackThumbnail}'"
+            >
+            <div class="work-play">
+                <i class="fas fa-play"></i>
+            </div>
+            </div>
+            <div class="work-info">
+            <span class="work-category">${work.category || 'Video'}</span>
+            <h3 class="work-title">${work.title}</h3>
+            </div>
+        </article>
+        `;
+    } else if (work.type === 'app') {
+      // App Card
+      return `
+        <a href="${work.url}" target="_blank" class="work-card app-card" style="text-decoration: none; color: inherit;">
+            <div class="work-thumbnail" style="background: linear-gradient(135deg, #1e293b, #0f172a); display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-laptop-code" style="font-size: 3rem; color: #38bdf8;"></i>
+                <div class="work-play">
+                    <i class="fas fa-external-link-alt"></i>
+                </div>
+            </div>
+            <div class="work-info">
+            <span class="work-category">${work.category || 'App'}</span>
+            <h3 class="work-title">${work.title}</h3>
+            </div>
+        </a>
+        `;
+    }
   }).join('');
 
-  // Add click listeners
-  document.querySelectorAll('.work-card').forEach(card => {
+  // Add click listeners only for video cards
+  document.querySelectorAll('.video-card').forEach(card => {
     card.addEventListener('click', () => {
       const youtubeId = card.dataset.youtubeId;
       openVideoModal(youtubeId);
